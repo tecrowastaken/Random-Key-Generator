@@ -197,7 +197,7 @@ fn main() {
     if cfg!(windows){
         let mut args = Args::parse();
     
-   
+        #[cfg(windows)]
         match ansi_term::enable_ansi_support() {
             Ok(_) => {}
             Err(_) => {
