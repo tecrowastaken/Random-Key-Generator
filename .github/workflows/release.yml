@@ -1,6 +1,8 @@
 # .github/workflows/release.yml
 
 on:
+  push:
+    branches: [ "main" ]
   release:
     types: [created]
 
@@ -9,11 +11,9 @@ jobs:
     name: release ${{ matrix.target }}
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
          toolchain:
-          - stable
-          - beta
           - nightly
          include:
           - target: x86_64-pc-windows-gnu
