@@ -1,0 +1,17 @@
+[package]
+name = "rkg"
+description = "Generates a Random Key that can be used for tools like Veracrypt and Crypomater or more"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.38", features = ["derive"] }
+clap_derive = "4.5.32"
+clippers = "0.1.2"
+colored = "3.0.0"
+prompt-input = "1.0.0"
+random-string = "1.1.0"
+
+# If were using windows we need to fix coloring...
+[target.'cfg(windows)'.dependencies]
+ansi_term = "0.12.1"
