@@ -186,7 +186,7 @@ impl Args {
             );
         }
         if self.clip_board {
-            clippers::Clipboard::get().write_text(key).unwrap();
+            copypasta::ClipboardContext::new().unwrap().set_contents(key).unwrap();
             self.sucess("[Copied]", "Your Key was copied to your clipboard");
         }
     }
