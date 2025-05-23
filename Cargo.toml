@@ -7,7 +7,7 @@ edition = "2021"
 [dependencies]
 clap = { version = "4.5.38", features = ["derive"] }
 clap_derive = "4.5.32"
-clippers = "0.1.2"
+copypasta = "0.10.2"
 colored = "3.0.0"
 prompt-input = "1.0.0"
 random-string = "1.1.0"
