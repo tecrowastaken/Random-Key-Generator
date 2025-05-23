@@ -1,3 +1,5 @@
+cargo-features = ["edition2024"]
+
 [package]
 name = "rkg"
 description = "Generates a Random Key that can be used for tools like Veracrypt and Crypomater or more"
