@@ -2,6 +2,7 @@ pub mod key;
 
 use clap::Parser;
 use colored::{ColoredString, Colorize};
+use copypasta::ClipboardProvider;
 use core::fmt;
 use key::generate_key;
 use std::path::PathBuf;
@@ -193,16 +194,19 @@ impl Args {
 }
 
 fn main() {
-    let mut args = Args::parse();
-
-    #[cfg(windows)]
-    match ansi_term::enable_ansi_support() {
-        Ok(_) => {}
-        Err(_) => {
-            println!("[WARN] Colors will be disabled, is this what you wanted?");
-            args.disable_color = true;
-        }
-    };
+    if cfg!(windows){
+        let mut args = Args::parse();
     
-    args.generate_key();
+   
+        match ansi_term::enable_ansi_support() {
+            Ok(_) => {}
+            Err(_) => {
+                println!("[WARN] Colors will be disabled, is this what you wanted?");
+                args.disable_color = true;
+            }
+        };
+        args.generate_key();
+    } else {
+        Args::parse().generate_key();
+    }
 }
