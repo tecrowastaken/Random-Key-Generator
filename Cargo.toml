@@ -1,7 +1,7 @@
 [package]
 name = "rkg"
 description = "Generates a Random Key that can be used for tools like Veracrypt and Crypomater or more"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 rust-version = "1.71.0"
 
