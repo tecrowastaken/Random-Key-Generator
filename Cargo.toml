@@ -3,6 +3,7 @@ name = "rkg"
 description = "Generates a Random Key that can be used for tools like Veracrypt and Crypomater or more"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.71.0"
 
 [dependencies]
 clap = { version = "4.5.38", features = ["derive"] }
